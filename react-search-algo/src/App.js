@@ -1,8 +1,10 @@
+
+
 import React,{Component} from 'react';
 import searchAlgos from './search.js'
 import './App.css';
 import Data from './data'
-
+import BinarySearchTree from './BinarySearchTree'
 
 export default class App extends Component {
   constructor(props) {
