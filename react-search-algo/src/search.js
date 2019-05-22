@@ -25,6 +25,23 @@
 
 const searchAlgos = {
 
+
+
+
+    linearSearch(array, value) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                console.log(`value to search for: ${array[i]}, number of tries:${i} `)
+                return i;
+            }
+        }
+        console.log(`value:${value} not found, number of tries:${array.length} `)
+        return -1;
+    },
+
+
+
+
     binarySearch(array, value, start=0, end=array.length-1) {
     if (start > end) return -1;
     //find the midpoint and the item at the midpoint
