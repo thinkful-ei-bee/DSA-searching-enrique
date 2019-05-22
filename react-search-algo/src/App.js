@@ -5,6 +5,7 @@ import searchAlgos from './search.js'
 import './App.css';
 import Data from './data'
 import BinarySearchTree from './BinarySearchTree'
+import BookSearch from './bookSearch.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -22,13 +23,12 @@ export default class App extends Component {
   }
 
   handleSubmit = (event) => {
-  
     event.preventDefault();
     // searchAlgos.linearSearch(this.state.data, this.state.value)
-    searchAlgos.binarySearch(this.state.sortedData, this.state.value)
-
-
+    searchAlgos.binarySearch()
   }
+
+
 
   render(){
  console.log(this.state.sortedData)
@@ -45,7 +45,10 @@ export default class App extends Component {
         </form>
       </div>
       </header>
-     
+      <div className='bookSearch'>
+     <BookSearch />
+
+      </div>
     </div>
   );
   }

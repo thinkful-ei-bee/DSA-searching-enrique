@@ -1,7 +1,4 @@
-// How many searches?
 
-
-//1)
 // Given a sorted list 3, 5, 6, 8, 11, 12, 14, 15, 17, 18 and are using the recursive binary search algorithm. 
 // Identify the sequence of numbers that each recursive call will search to find 8.
 
@@ -11,7 +8,7 @@
    //   4th call:  start: 8, end: 8, midpoint: 8
     // returns index of 3
    
-
+//=============================
 
 // Given a sorted list 3, 5, 6, 8, 11, 12, 14, 15, 17, 18 and are using the recursive binary search algorithm. 
 // Identify the sequence of numbers that each recursive call will search to find 16?
@@ -20,8 +17,38 @@
     //3rd call start: 17, end: 18, middle: 17
     //returns -1
     
+//=============================
+
+   // Given a binary search tree whose in-order and pre-order traversals are 
+   //respectively 14 15 19 25 27 35 79 89 90 91 and 35 25 15 14 19 27 89 79 91 90.
+
+//                         35
+//                      /      \
+//                    25        89
+//                    / \      /  \
+//                   15  27   79   91
+//                  /  \           /
+//                14    19       90
 
 
+   // What would be its postorder traversal?
+        //14,19,15,27,25,79,90,91,89,35
+
+//=============================
+
+    //The post order traversal of a binary search tree is 5 7 6 9 11 10 8. What is its pre-order traversal?
+         // 8,6,5,7,10,9,11   
+
+
+                    //         8
+                    //       /   \
+                    //      6     10 
+                    //     / \    / \
+                    //    5   7  9  11
+
+//=============================
+
+    
 
 const searchAlgos = {
 
