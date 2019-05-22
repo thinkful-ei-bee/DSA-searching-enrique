@@ -93,9 +93,9 @@ const BinarySearchTree= require('./BinarySearchTree')
   function codeTree(arr) {
     const tree = new BinarySearchTree();
     arr.forEach(num => tree.insert(num, num));
-    // console.log(tree)
+    console.log(tree)
 
-
+   
 
     console.log('+++++Pre order traversal:');
     preOrderTraversal(tree)
@@ -107,15 +107,41 @@ const BinarySearchTree= require('./BinarySearchTree')
     postOrderTraversal(tree)
   }
   
+
+
+
+
+  function codeStarTrek(arr){
+    const tree = new BinarySearchTree();
+
+
+    for(let i=0; i<arr.length; i++){
+        let key= Object.keys(arr[i])
+        let value= Object.values(arr[i])
+  
+
+        tree.insert(key, value)
+
+      
+    }
+    
+      console.log(tree)
+  }
+
+
+
   
   function main() {
     const arr = [35, 89, 91, 90, 79, 25, 27, 15, 19, 14];
    
     
     const arr1 = [ 8, 10, 11, 9, 6, 5, 7];
-  
+    const arr2= [25, 15, 50, 10, 24, 35, 70, 4, 12, 18, 31, 44, 66, 90, 22]
+    const arr3= [{5:"picard"}, {6:"data"}, {8:'crusher'}, {7:'selar'}, {4:'riker'}, {2:'worf'}, {1:'officer'}, {3:'laforge'} ]
 
-   codeTree(arr1)
+
+    codeStarTrek(arr3)
+//    codeTree(arr2)
   }
   
   main();
