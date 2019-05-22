@@ -10,7 +10,7 @@ export default class App extends Component {
     this.state = {
       value: '',
       data:Data.split(' '),
-      sortedDate:Data.split(' ').map(i => Number(i)).sort(),
+      sortedData:Data.split(' ').map(i => Number(i)).sort(function(a, b){return a-b}),
     };
   }
 
@@ -22,14 +22,14 @@ export default class App extends Component {
   handleSubmit = (event) => {
   
     event.preventDefault();
-    searchAlgos.linearSearch(this.state.data, this.state.value)
-
+    // searchAlgos.linearSearch(this.state.data, this.state.value)
+    searchAlgos.binarySearch(this.state.sortedData, this.state.value)
 
 
   }
 
   render(){
- 
+ console.log(this.state.sortedData)
   return (
     <div className="App">
       <header className="App-header">
