@@ -1,5 +1,5 @@
 const BinarySearchTree= require('./BinarySearchTree')
-
+const Queue = require('./Queue')
 
 
 // Given a sorted list 3, 5, 6, 8, 11, 12, 14, 15, 17, 18 and are using the recursive binary search algorithm. 
@@ -113,7 +113,7 @@ const BinarySearchTree= require('./BinarySearchTree')
 
   function codeStarTrek(arr){
     const tree = new BinarySearchTree();
-
+    
 
     for(let i=0; i<arr.length; i++){
         let key= Object.keys(arr[i])
@@ -125,20 +125,112 @@ const BinarySearchTree= require('./BinarySearchTree')
       
     }
     
-      console.log(tree)
+    let trekList = []
+   let nodeKey = breadthFirstSearch(tree)
+   trekList.push(nodeKey)
+ console.log('===========TrekList from codeStarTrek=================')
+ console.log(trekList)
+ console.log(nodeKey)
+
+ console.log('=============================')
   }
 
+  function breadthFirstSearch(node){
+    //   console.log('NODE FROM BFS:', node)
+    //   console.log('^^^^^^^^^^^^^^^^')
+    let values=[]
+    const queue = new Queue(); // Assuming a Queue is implemented (refer to previous lesson on Queue)
+    queue.enqueue(node.left)
+    // console.log(queue, '<-queue')
+    // console.log(`node.key : ${node.key}`)
+    // console.log(`node.value : ${node.value}`)
+    // console.log(`node.left : ${node.left.BinarySearchTree}`)
+    // console.log(`node.right : ${node.right}`)
+
+    while (queue.length) {
+       node = queue.dequeue(); //remove from the queue
+        values.push(node.value); // add that value from the queue to an array
 
 
-  
-  function main() {
-    const arr = [35, 89, 91, 90, 79, 25, 27, 15, 19, 14];
+        console.log('here')
+        console.log('^^^^^^^^^^^^^^^^')
+        console.log('values:', values)
+
+
+        if (node.left) {
+            queue.enqueue(node.left);
+            breadthFirstSearch(node.left) //add left child to the queue
+        }
+      
+        if (node.right) {
+            queue.enqueue(node.right); 
+            breadthFirstSearch(node.right)
+            // add right child to the queue
+        }
+        console.log('<-queue',queue )
+        return values;
+    }
    
+}
+
+
+
+
+
+
+
+
+
+
+
+ function DSFInOrder(){
+    if (this.left) {
+        this.left.dsfInOrder();
+    }
+    console.log(this.key);
+    if (this.right) {
+        this.right.dsfInOrder();
+    }
+}
+
+  function DSFInOrder2(values=[]) {
+    if (this.left) {
+        values = this.left.dfs(values);
+    }
+    values.push(this.value);
+
+    if (this.right) {
+        values = this.right.dfs(values);
+    }
+    return values;
+}
+
+
+
+
+
+
+
+function maxProfit(arr){
+
+}
+
+
+
+
+
+function main() {
+    const arr = [35, 89, 91, 90, 79, 25, 27, 15, 19, 14];
+    
     
     const arr1 = [ 8, 10, 11, 9, 6, 5, 7];
     const arr2= [25, 15, 50, 10, 24, 35, 70, 4, 12, 18, 31, 44, 66, 90, 22]
     const arr3= [{5:"picard"}, {6:"data"}, {8:'crusher'}, {7:'selar'}, {4:'riker'}, {2:'worf'}, {1:'officer'}, {3:'laforge'} ]
+    
+    let priceArr = [128, 97, 121, 123, 98, 97, 105]
 
+
+    // maxProfit(priceArr)
 
     codeStarTrek(arr3)
 //    codeTree(arr2)
